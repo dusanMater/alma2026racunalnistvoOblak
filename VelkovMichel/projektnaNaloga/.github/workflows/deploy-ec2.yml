@@ -74,10 +74,10 @@ jobs:
           set -euo pipefail
           scp -i /tmp/ec2_key.pem -o StrictHostKeyChecking=no /tmp/release.tar.gz "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/tmp/release.tar.gz"
           scp -i /tmp/ec2_key.pem -o StrictHostKeyChecking=no \
-            VelkovMichel/ProjektnaNaloga/ci-cd-template/scripts/deploy_release.sh \
-            VelkovMichel/ProjektnaNaloga/ci-cd-template/scripts/migrate_rds.sh \
-            VelkovMichel/ProjektnaNaloga/ci-cd-template/scripts/healthcheck.sh \
-            VelkovMichel/ProjektnaNaloga/ci-cd-template/scripts/rollback.sh \
+            VelkovMichel/projektnaNaloga/ci-cd-template/scripts/deploy_release.sh \
+            VelkovMichel/projektnaNaloga/ci-cd-template/scripts/migrate_rds.sh \
+            VelkovMichel/projektnaNaloga/ci-cd-template/scripts/healthcheck.sh \
+            VelkovMichel/projektnaNaloga/ci-cd-template/scripts/rollback.sh \
             "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/tmp/"
 
       - name: Run deployment on EC2
